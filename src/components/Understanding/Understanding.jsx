@@ -16,7 +16,7 @@ class Understanding extends Component {
 
     handleClick = () => {
         console.log('you going to plants');
-        
+        this.props.dispatch({type: "SET_UNDERSTANDING", payload: this.state.currentInput})
         this.props.history.push('/support')
       }
 

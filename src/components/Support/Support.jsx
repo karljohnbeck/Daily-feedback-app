@@ -17,7 +17,7 @@ class Support extends Component {
 
     handleClick = () => {
         console.log('you going to plants');
-        
+        this.props.dispatch({type: "SET_SUPPORT", payload: this.state.currentInput})
         this.props.history.push('/comment')
       }
     render() {

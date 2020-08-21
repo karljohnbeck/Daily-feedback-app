@@ -21,8 +21,8 @@ class Feeling extends Component {
     }
 
     handleClick = () => {
-        console.log('you going to plants');
-        
+        console.log('to understanding');
+        this.props.dispatch({type: "SET_FEELING", payload: this.state.currentInput})
         this.props.history.push('/understanding')
       }
     
@@ -31,7 +31,7 @@ class Feeling extends Component {
         return(
             <>
             <h4>How are you feeling today ?</h4>
-            <input onChange={this.handleChange} />
+            <input type="number" onChange={this.handleChange} />
             {/* <FeelingBtn onClick={this.addFeelings}/> */}
             <button onClick={this.handleClick}>next</button>
             </>
