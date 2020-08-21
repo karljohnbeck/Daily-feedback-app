@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // bring in component that wants history
 import {withRouter} from 'react-router-dom'
 
-class CompleteBtn extends Component {
+class DidItBtn extends Component {
 
   handleClick = () => {
     console.log('you going to plants');
@@ -20,4 +20,4 @@ class CompleteBtn extends Component {
 }
 
 // give this component acsess to history
-export default withRouter(CompleteBtn);
+export default withRouter(DidItBtn);

@@ -7,7 +7,7 @@ import Feeling from '../Feeling/Feeling'
 import Understanding from '../Understanding/Understanding'
 import Support from '../Support/Support'
 import Comment from '../Comment/Comment'
-import Complete from '../Complete/Complete'
+import DidIt from '../Complete/Complete'
 import ReviewSubmit from '../ReviewSubmit/ReviewSubmit'
 class App extends Component {
 
@@ -30,7 +30,7 @@ class App extends Component {
           <Route path="/support" component={Support}/>
           <Route path="/comment" component={Comment}/>
           <Route path="/review" component={ReviewSubmit}/>
-          <Route path="/completed" component={Complete}/>
+          <Route path="/completed" component={DidIt}/>
 
         </Router>
         <br />

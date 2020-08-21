@@ -3,9 +3,19 @@ import { connect } from 'react-redux'
 import ReviewSubmitBtn from './ReviewSubmitBtn'
 
 class ReviewSubmit extends Component {
+
+    handleClick = () => {
+        console.log('you going to plants');
+        
+        this.props.history.push('/completed')
+      }
+
     render() {
         return(
-            <ReviewSubmitBtn />
+            <>
+            <p>review</p>
+            <button onClick={this.handleClick}>next</button>
+            </> 
         )
     }
 }

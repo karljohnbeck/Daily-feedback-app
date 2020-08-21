@@ -7,7 +7,7 @@ class ReviewSubmitBtn extends Component {
   handleClick = () => {
     console.log('you going to plants');
     
-    this.props.history.push('/complete')
+    this.props.history.push('/completed')
   }
 
   render() {
