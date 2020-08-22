@@ -15,10 +15,18 @@ class Understanding extends Component {
     }
 
     handleClick = () => {
+        if (this.state.currentInput === '1' 
+            || this.state.currentInput === '2' 
+            || this.state.currentInput === '3' 
+            || this.state.currentInput=== '4' 
+            || this.state.currentInput === '5') {
         console.log('you going to plants');
         this.props.dispatch({type: "SET_UNDERSTANDING", payload: this.state.currentInput})
         this.props.history.push('/support')
-      }
+      }else {
+        alert('Please fill out the field please.')
+    }
+}
 
     render() {
         return(

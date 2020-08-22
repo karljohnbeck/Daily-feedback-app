@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import FeelingBtn from './FeelingBtn'
 
 
 class Feeling extends Component {
     state = {
-        currentInput: ''
+        currentInput: 0
     }
 
     handleChange = (event) => {
@@ -15,25 +15,27 @@ class Feeling extends Component {
         console.log(this.state.currentInput)
     }
 
-    addFeelings = () => {
-        // this.props.dispatch({type: 'SET_FEELINGS', payload: this.state.currentInput})
-        console.log('woo')
+    handleClick = () => {
+        if (this.state.currentInput === '1' 
+            || this.state.currentInput === '2' 
+            || this.state.currentInput === '3' 
+            || this.state.currentInput=== '4' 
+            || this.state.currentInput === '5') {
+                console.log('to understanding');
+                this.props.dispatch({ type: "SET_FEELING", payload: this.state.currentInput })
+                this.props.history.push('/understanding')
+        } else {
+            alert('Please fill out the field please.')
+        }
     }
 
-    handleClick = () => {
-        console.log('to understanding');
-        this.props.dispatch({type: "SET_FEELING", payload: this.state.currentInput})
-        this.props.history.push('/understanding')
-      }
-    
-     
     render() {
-        return(
+        return (
             <>
-            <h4>How are you feeling today ?</h4>
-            <input type="number" onChange={this.handleChange} />
-            {/* <FeelingBtn onClick={this.addFeelings}/> */}
-            <button onClick={this.handleClick}>next</button>
+                <h4>How are you feeling today ?</h4>
+                <input type="number" onChange={this.handleChange} />
+                {/* <FeelingBtn onClick={this.addFeelings}/> */}
+                <button onClick={this.handleClick}>next</button>
             </>
         )
     }

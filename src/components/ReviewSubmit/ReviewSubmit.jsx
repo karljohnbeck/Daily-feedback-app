@@ -6,8 +6,17 @@ import axios from 'axios'
 class ReviewSubmit extends Component {
 
     handleClick = () => {
+        const currentFeedback = {
+            feeling: this.props.reduxState.feelingReducer,
+            understanding: this.props.reduxState.understandingReducer,
+            support: this.props.reduxState.supportReducer,
+            comment: this.props.reduxState.commentReducer
+        }
         console.log('you going to plants');
-        axios.put()
+        axios.post('/feedback', currentFeedback)
+        .then((response) => {
+            console.log('post sucsess')
+        })
         this.props.history.push('/completed')
       }
 
