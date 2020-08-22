@@ -32,6 +32,8 @@ class Understanding extends Component {
         return(
             <>
             <h4>How is your understanding on todays material?</h4>
+            <p>Totally Lost :     1 - 2 - 3 - 4 - 5     : I could Teach this!</p>
+
             <input onChange={this.handleChange} />
             <button onClick={this.handleClick}>next</button>
             </>

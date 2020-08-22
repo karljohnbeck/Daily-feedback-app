@@ -33,6 +33,7 @@ class Feeling extends Component {
         return (
             <>
                 <h4>How are you feeling today ?</h4>
+                <p>Poor :     1 - 2 - 3 - 4 - 5 : Awesome</p>
                 <input type="number" onChange={this.handleChange} />
                 {/* <FeelingBtn onClick={this.addFeelings}/> */}
                 <button onClick={this.handleClick}>next</button>

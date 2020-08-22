@@ -24,11 +24,10 @@ class ReviewSubmit extends Component {
         return(
             <>
             <h2>Ready to submit?</h2>
-            <p>Make any last min changes below.</p>
-            <h3>Feeling: <input value={this.props.reduxState.feelingReducer} /></h3>
-            <h3>Understanding: <input value={this.props.reduxState.understandingReducer} /></h3>
-            <h3>Support: <input value={this.props.reduxState.supportReducer} /></h3>
-            <h3>Comment: <input value={this.props.reduxState.commentReducer} /></h3>
+            <h3>Feeling: {this.props.reduxState.feelingReducer} </h3>
+            <h3>Understanding: {this.props.reduxState.understandingReducer} </h3>
+            <h3>Support: {this.props.reduxState.supportReducer} </h3>
+            <h3>Comment: {this.props.reduxState.commentReducer} </h3>
 
             <button onClick={this.handleClick}>submit</button>
             </> 

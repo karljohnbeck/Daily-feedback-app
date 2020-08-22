@@ -32,6 +32,8 @@ class Support extends Component {
         return(
             <>
             <h4>How supported do you feel today?</h4>
+            <p>Help im drowning! :     1 - 2 - 3 - 4 - 5 : So Much Help!</p>
+
             <input onChange={this.handleChange} />
             <button onClick={this.handleClick}>next</button>
             </>
