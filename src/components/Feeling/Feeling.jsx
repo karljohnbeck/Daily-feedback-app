@@ -5,7 +5,7 @@ import FeelingBtn from './FeelingBtn'
 
 class Feeling extends Component {
     state = {
-        currentInput: 0
+        currentInput: ''
     }
 
     handleChange = (event) => {
@@ -32,11 +32,11 @@ class Feeling extends Component {
     render() {
         return (
             <>
-                <h4>How are you feeling today ?</h4>
+                <h3>How are you feeling today ?</h3>
                 <p>Poor :     1 - 2 - 3 - 4 - 5 : Awesome</p>
-                <input type="number" onChange={this.handleChange} />
+                <input className="input" type="number" onChange={this.handleChange}/>
                 {/* <FeelingBtn onClick={this.addFeelings}/> */}
-                <button onClick={this.handleClick}>next</button>
+                <button className="btn btn-primary" onClick={this.handleClick}>next</button>
             </>
         )
     }

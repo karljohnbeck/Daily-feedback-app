@@ -31,11 +31,11 @@ class Understanding extends Component {
     render() {
         return(
             <>
-            <h4>How is your understanding on todays material?</h4>
+            <h3>How is your understanding on todays material?</h3>
             <p>Totally Lost :     1 - 2 - 3 - 4 - 5     : I could Teach this!</p>
 
-            <input onChange={this.handleChange} />
-            <button onClick={this.handleClick}>next</button>
+            <input className="input" onChange={this.handleChange} />
+            <button className="btn btn-primary" onClick={this.handleClick}>next</button>
             </>
         )
     }

@@ -31,11 +31,11 @@ class Support extends Component {
     render() {
         return(
             <>
-            <h4>How supported do you feel today?</h4>
+            <h3>How supported do you feel today?</h3>
             <p>Help im drowning! :     1 - 2 - 3 - 4 - 5 : So Much Help!</p>
 
-            <input onChange={this.handleChange} />
-            <button onClick={this.handleClick}>next</button>
+            <input className="input" onChange={this.handleChange} />
+            <button  className="btn btn-primary" onClick={this.handleClick}>next</button>
             </>
         )
     }

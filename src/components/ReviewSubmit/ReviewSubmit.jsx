@@ -20,16 +20,30 @@ class ReviewSubmit extends Component {
         this.props.history.push('/completed')
       }
 
+      handleClickFeeling = () => {
+        this.props.history.push('/feeling')
+      }
+      handleClickUnderstanding = () => {
+        this.props.history.push('/understanding')
+      }
+      handleClickComment = () => {
+        this.props.history.push('/comment')
+      }
+      handleClickSupport = () => {
+        this.props.history.push('/support')
+      }
+      
+
     render() {
         return(
             <>
-            <h2>Ready to submit?</h2>
-            <h3>Feeling: {this.props.reduxState.feelingReducer} </h3>
-            <h3>Understanding: {this.props.reduxState.understandingReducer} </h3>
-            <h3>Support: {this.props.reduxState.supportReducer} </h3>
-            <h3>Comment: {this.props.reduxState.commentReducer} </h3>
+            <h1>Ready to submit?</h1>
+            <h2>Feeling: {this.props.reduxState.feelingReducer} <button className="edit btn btn-secondary" onClick={this.handleClickFeeling}>edit</button></h2>
+            <h2>Understanding: {this.props.reduxState.understandingReducer} <button className="edit btn btn-secondary" onClick={this.handleClickUnderstanding}>edit</button></h2>
+            <h2>Support: {this.props.reduxState.supportReducer} <button className="edit btn btn-secondary" onClick={this.handleClickSupport}>edit</button></h2>
+            <h2>Comment: {this.props.reduxState.commentReducer} <button className="edit btn btn-secondary" onClick={this.handleClickComment}>edit</button></h2> 
 
-            <button onClick={this.handleClick}>submit</button>
+            <button  className="btn btn-primary" onClick={this.handleClick}>Submit</button>
             </> 
         )
     }

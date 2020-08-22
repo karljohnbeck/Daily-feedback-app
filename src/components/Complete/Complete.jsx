@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import DidItBtn from './CompleteBtn'
 
+
 class DidIt extends Component {
     
 
@@ -14,8 +15,9 @@ class DidIt extends Component {
     render() {
         return(
             <>
-            <p>DONE</p>
-            <button onClick={this.handleClick}>next</button>
+            
+            <h1>Submission received!</h1>
+            <button  className="btn btn-primary" onClick={this.handleClick}>Return Home</button>
 
             </>
         )

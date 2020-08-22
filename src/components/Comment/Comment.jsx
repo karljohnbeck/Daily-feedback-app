@@ -23,10 +23,10 @@ class Comment extends Component {
     render() {
         return(
             <>
-            <h4>*Any Comments?</h4>
+            <h3>*Any Comments?</h3>
             <p>(Optional)</p>
-            <input onChange={this.handleChange} />
-            <button onClick={this.handleClick}>next</button>
+            <input className="input" onChange={this.handleChange} />
+            <button className="btn btn-primary" onClick={this.handleClick}>next</button>
             </>
         )
     }
