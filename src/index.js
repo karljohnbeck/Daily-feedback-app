@@ -12,24 +12,32 @@ import logger from 'redux-logger'
 const feelingReducer = (state = 0, action) => {
     if (action.type === 'SET_FEELING') {
         return action.payload
+    } else if (action.type === 'RESET_STATE') {
+        return 0
     }
     return state;
 }
 const understandingReducer = (state = 0, action) => {
     if (action.type === 'SET_UNDERSTANDING') {
         return action.payload
+    } else if (action.type === 'RESET_STATE') {
+        return 0
     }
     return state;
 }
 const supportReducer = (state = 0, action) => {
     if (action.type === 'SET_SUPPORT') {
         return action.payload
+    } else if (action.type === 'RESET_STATE') {
+        return 0
     }
     return state;
 }
 const commentReducer = (state = '', action) => {
     if (action.type === 'SET_COMMENT') {
         return action.payload
+    } else if (action.type === 'RESET_STATE') {
+        return ''
     }
     return state;
 }

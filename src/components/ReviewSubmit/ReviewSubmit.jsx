@@ -15,6 +15,7 @@ class ReviewSubmit extends Component {
         axios.post('/feedback', currentFeedback)
         .then((response) => {
             console.log('post sucsess')
+            this.props.dispatch({type: 'RESET_STATE'})
         }).catch((error) => {
             console.log(error)
         })

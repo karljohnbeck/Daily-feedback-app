@@ -29,7 +29,8 @@ class App extends Component {
         })
   }
 
-  goToFeelings = () => {
+  clearReducers = () => {
+    this.props.dispatch({type: 'RESET_STATE'})
   }
 
   render() {
@@ -41,7 +42,7 @@ class App extends Component {
             <h1 className="App-title">Feedback!</h1>
             <h4><i>Don't forget it!</i></h4>
             <nav>
-              <Link to={"/"}><button className="btn btn-light" onClick={this.goToFeelings}>Home</button></Link>
+              <Link to={"/"}><button className="btn btn-light" onClick={this.clearReducers}>Home</button></Link>
             </nav>
           </header>
 
@@ -49,7 +50,7 @@ class App extends Component {
               <Link to={"/feeling"}>
                 <button className="start btn btn-primary" onClick={this.goToFeelings}>start feedback</button>
               </Link>
-              <h3>Previous feedbacks</h3>
+              <h3>Previous feedback</h3>
               <FeedbackData />
             </Route>
 
