@@ -8,8 +8,15 @@ This project was to create an application that would allow a user to submit feed
 
 ## Screen Shot
 
+_Below is an image of the home page._
 ![sample home page](/sample/sample_home.png)
+
+_Below is an image one of the Input pages._
+
 ![sample input page](/sample/sample_input.png)
+
+_Below is an image of the Review page._
+
 ![sample review page](/sample/sample_review.png)
 
 
