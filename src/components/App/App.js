@@ -53,7 +53,7 @@ class App extends Component {
           {/* Home page router */}
           <Route exact path="/" >
             <Link to={"/feeling"}>
-              <button className="start btn btn-primary" onClick={this.goToFeelings}>Start feedback</button>
+              <button className="start btn btn-primary" onClick={this.goToFeelings}>Give feedback</button>
             </Link>
             <h3>Previous feedback</h3>
             <FeedbackData />
