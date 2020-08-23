@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import CommentBtn from'./CommentBtn'
 
 class Comment extends Component {
     state = {
@@ -23,9 +22,9 @@ class Comment extends Component {
     render() {
         return(
             <>
-            <h3>*Any Comments?</h3>
+            <h3>*Any comments?</h3>
             <p>(Optional)</p>
-            <input className="input" onChange={this.handleChange} />
+            <input contentEditable="true" className="input" onChange={this.handleChange} defaultValue={this.props.reduxState.commentReducer}/>
             <button className="btn btn-primary" onClick={this.handleClick}>next</button>
             </>
         )

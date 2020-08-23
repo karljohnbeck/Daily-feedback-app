@@ -30,3 +30,24 @@
   margin-right: 5%;
 }
 
+.radioBtn {
+  margin-right: 2%;
+  text-align: center;
+
+  
+}
+
+.radioTown {
+  margin: auto;
+  height: normal;
+  margin: 3%;
+}
+
+header {
+  margin-bottom: 2%;
+}
+
+h5 {
+  display: inline-block;
+  margin-right: 2%;
+}

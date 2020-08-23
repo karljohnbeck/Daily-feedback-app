@@ -33,13 +33,20 @@ const commentReducer = (state = '', action) => {
     }
     return state;
 }
+const feedbackDataReducer = (state = [], action) => {
+    if (action.type === 'SET_FEEDBACK_DATA') {
+        return action.payload
+    }
+    return state
+}
 
 const store = createStore(
     combineReducers({
         feelingReducer,
         understandingReducer,
         supportReducer,
-        commentReducer
+        commentReducer,
+        feedbackDataReducer
     }),
     applyMiddleware(logger)
 )

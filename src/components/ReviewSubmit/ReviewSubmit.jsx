@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import ReviewSubmitBtn from './ReviewSubmitBtn'
 import axios from 'axios'
 
 class ReviewSubmit extends Component {
@@ -16,6 +15,8 @@ class ReviewSubmit extends Component {
         axios.post('/feedback', currentFeedback)
         .then((response) => {
             console.log('post sucsess')
+        }).catch((error) => {
+            console.log(error)
         })
         this.props.history.push('/completed')
       }

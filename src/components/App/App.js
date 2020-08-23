@@ -9,23 +9,39 @@ import Support from '../Support/Support'
 import Comment from '../Comment/Comment'
 import DidIt from '../Complete/Complete'
 import ReviewSubmit from '../ReviewSubmit/ReviewSubmit'
+import FeedbackData from '../FeedbackData/FeedbackData'
+import { connect } from 'react-redux'
+
 import './bootstrap.css'
 
 class App extends Component {
+
+  componentDidMount = () => {
+    this.getFeedbackData()
+  }
+  getFeedbackData = () => {
+    axios.get('/feedback')
+        .then((response) => {
+            console.log('get sucsess')
+            this.props.dispatch({type: 'SET_FEEDBACK_DATA', payload: response.data})
+        }).catch((error) => {
+            console.log(error)
+        })
+  }
 
   goToFeelings = () => {
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="App container">
         <Router>
 
           <header className="App-header">
             <h1 className="App-title">Feedback!</h1>
             <h4><i>Don't forget it!</i></h4>
             <nav>
-              <Link to={"/"}><button class="btn btn-light" onClick={this.goToFeelings}>Home</button></Link>
+              <Link to={"/"}><button className="btn btn-light" onClick={this.goToFeelings}>Home</button></Link>
             </nav>
           </header>
 
@@ -33,6 +49,8 @@ class App extends Component {
               <Link to={"/feeling"}>
                 <button className="start btn btn-primary" onClick={this.goToFeelings}>start feedback</button>
               </Link>
+              <h3>Previous feedbacks</h3>
+              <FeedbackData />
             </Route>
 
             <Route path="/feeling" component={Feeling} />
@@ -48,5 +66,10 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = (reduxState) => {
+  return {
+      reduxState
+  }
+}
 
-export default App;
+export default connect(mapStateToProps)(App);

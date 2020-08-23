@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import FeelingBtn from './FeelingBtn'
 
 
 class Feeling extends Component {
+
+    componentDidMount = () => {
+        this.setState({
+            currentInput: this.props.reduxState.supportReducer
+        })
+    }
+
     state = {
         currentInput: ''
     }
@@ -33,8 +39,19 @@ class Feeling extends Component {
         return (
             <>
                 <h3>How are you feeling today ?</h3>
-                <p>Poor :     1 - 2 - 3 - 4 - 5 : Awesome</p>
-                <input className="input" type="number" onChange={this.handleChange}/>
+                {/* <p>Poor :     1 - 2 - 3 - 4 - 5 : Awesome</p> */}
+
+                <div className="radioTown" onChange={this.handleChange} >
+                <h5>Poor :</h5> 
+                1 <input className="radioBtn" type="radio" value="1" name="feeling" defaultChecked={this.props.reduxState.feelingReducer === "1"}/> 
+                2 <input className="radioBtn" type="radio" value="2" name="feeling" defaultChecked={this.props.reduxState.feelingReducer === "2"}/> 
+                3 <input className="radioBtn" type="radio" value="3" name="feeling" defaultChecked={this.props.reduxState.feelingReducer === "3"}/> 
+                4 <input className="radioBtn" type="radio" value="4" name="feeling"  defaultChecked={this.props.reduxState.feelingReducer === "4"}/> 
+                5 <input className="radioBtn" type="radio" value="5" name="feeling" defaultChecked={this.props.reduxState.feelingReducer === "5"}/> 
+                <h5>: Awesome </h5>
+            </div>
+
+                {/* <input className="input" type="number" onChange={this.handleChange}/> */}
                 {/* <FeelingBtn onClick={this.addFeelings}/> */}
                 <button className="btn btn-primary" onClick={this.handleClick}>next</button>
             </>
