@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 class DidIt extends Component {
     
+    
 
     handleClick = () => {
         console.log('you going to plants');
@@ -16,7 +17,7 @@ class DidIt extends Component {
             <>
             
             <h1>Submission received!</h1>
-            <button  className="btn btn-primary" onClick={this.handleClick}>Return Home</button>
+            <button  className="btn btn-primary" onClick={this.handleClick}>Return to Home</button>
 
             </>
         )

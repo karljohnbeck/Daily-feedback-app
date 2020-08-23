@@ -5,7 +5,7 @@ class Understanding extends Component {
 
     componentDidMount = () => {
         this.setState({
-            currentInput: this.props.reduxState.supportReducer
+            currentInput: this.props.reduxState.understandingReducer
         })
     }
 
@@ -30,7 +30,7 @@ class Understanding extends Component {
             this.props.dispatch({ type: "SET_UNDERSTANDING", payload: this.state.currentInput })
             this.props.history.push('/support')
         } else {
-            alert('Please fill out the field please.')
+            alert('Select one option before clicking next.')
         }
     }
 

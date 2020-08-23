@@ -6,7 +6,7 @@ class Feeling extends Component {
 
     componentDidMount = () => {
         this.setState({
-            currentInput: this.props.reduxState.supportReducer
+            currentInput: this.props.reduxState.feelingReducer
         })
     }
 
@@ -31,7 +31,7 @@ class Feeling extends Component {
                 this.props.dispatch({ type: "SET_FEELING", payload: this.state.currentInput })
                 this.props.history.push('/understanding')
         } else {
-            alert('Please fill out the field please.')
+            alert('Select one option before clicking next.')
         }
     }
 

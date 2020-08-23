@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
+import swal from '@sweetalert/with-react';
+
 
 class ReviewSubmit extends Component {
 
@@ -12,6 +14,12 @@ class ReviewSubmit extends Component {
             comment: this.props.reduxState.commentReducer
         }
         console.log('you going to plants');
+        this.postFeedbackData(currentFeedback)
+        this.getFeedbackData()
+        swal("Thanks for Submitting!", "Your feedback has been saved", "success");
+        this.props.history.push('/completed')
+      }
+      postFeedbackData = (currentFeedback) => {
         axios.post('/feedback', currentFeedback)
         .then((response) => {
             console.log('post sucsess')
@@ -19,8 +27,18 @@ class ReviewSubmit extends Component {
         }).catch((error) => {
             console.log(error)
         })
-        this.props.history.push('/completed')
       }
+
+      getFeedbackData = () => {
+        axios.get('/feedback')
+            .then((response) => {
+                console.log('get sucsess')
+                this.props.dispatch({type: 'SET_FEEDBACK_DATA', payload: response.data})
+            }).catch((error) => {
+                console.log(error)
+            })
+      }
+
 
       handleClickFeeling = () => {
         this.props.history.push('/feeling')

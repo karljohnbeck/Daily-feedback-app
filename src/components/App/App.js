@@ -19,6 +19,8 @@ class App extends Component {
   componentDidMount = () => {
     this.getFeedbackData()
   }
+  
+  
   getFeedbackData = () => {
     axios.get('/feedback')
         .then((response) => {
@@ -48,7 +50,7 @@ class App extends Component {
 
             <Route exact path="/" >
               <Link to={"/feeling"}>
-                <button className="start btn btn-primary" onClick={this.goToFeelings}>start feedback</button>
+                <button className="start btn btn-primary" onClick={this.goToFeelings}>Start feedback</button>
               </Link>
               <h3>Previous feedback</h3>
               <FeedbackData />

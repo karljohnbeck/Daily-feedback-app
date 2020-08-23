@@ -31,7 +31,7 @@ class Support extends Component {
         this.props.dispatch({type: "SET_SUPPORT", payload: this.state.currentInput})
         this.props.history.push('/comment')
       } else {
-        alert('Please fill out the field please.')
+        alert('Select one option before clicking next.')
     }
 }
     render() {
@@ -40,13 +40,13 @@ class Support extends Component {
             <h3>How supported do you feel today?</h3>
             {/* <p>Help im drowning :     1 - 2 - 3 - 4 - 5 : Nothing but help</p> */}
             <div className="radioTown" onChange={this.handleChange}>
-                <h5>Help im drowning :</h5>
+                <h5>Help I'm drowning :</h5>
                 1 <input className="radioBtn" type="radio" value="1" name="support" defaultChecked={this.props.reduxState.supportReducer === "1"}/> 
                 2 <input className="radioBtn" type="radio" value="2" name="support" defaultChecked={this.props.reduxState.supportReducer === "2"}/> 
                 3 <input className="radioBtn" type="radio" value="3" name="support" defaultChecked={this.props.reduxState.supportReducer === "3"}/> 
                 4 <input className="radioBtn" type="radio" value="4" name="support" defaultChecked={this.props.reduxState.supportReducer === "4"}/> 
                 5 <input className="radioBtn" type="radio" value="5" name="support" defaultChecked={this.props.reduxState.supportReducer === "5"}/> 
-                <h5>: Nothing but help </h5>
+                <h5>: Help coming out me ears </h5>
             </div>
 
             {/* <input type="number" className="input" onChange={this.handleChange} /> */}

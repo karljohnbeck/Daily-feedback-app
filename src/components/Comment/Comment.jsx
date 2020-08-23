@@ -2,8 +2,15 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 
 class Comment extends Component {
+
     state = {
         currentInput: ''
+    }
+
+    componentDidMount = () => {
+        this.setState({
+            currentInput: this.props.reduxState.commentReducer
+        })
     }
 
     handleChange = (event) => {
@@ -22,7 +29,7 @@ class Comment extends Component {
     render() {
         return(
             <>
-            <h3>*Any comments?</h3>
+            <h3>*Any additional comments?</h3>
             <p>(Optional)</p>
             <input contentEditable="true" className="input" onChange={this.handleChange} defaultValue={this.props.reduxState.commentReducer}/>
             <button className="btn btn-primary" onClick={this.handleClick}>next</button>
