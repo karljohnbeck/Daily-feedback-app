@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 
 class FeedbackData extends Component {
 
-    
-    
-    
+    // table loop over the feedback data array and display it as a table on the dom
     render() {
         return (
             <table className="table table-bordered">
@@ -20,24 +18,25 @@ class FeedbackData extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    
-                        {this.props.reduxState.feedbackDataReducer.map((feedback, i) => {
-                            return (
-                                <tr key={i}>
+
+                    {this.props.reduxState.feedbackDataReducer.map((feedback, i) => {
+                        return (
+                            <tr key={i}>
                                 <td>{feedback.feeling}</td>
                                 <td>{feedback.understanding}</td>
                                 <td>{feedback.support}</td>
                                 <td>{feedback.comments}</td>
-                                </tr>
-                            )
-                        })}
-                    
+                            </tr>
+                        )
+                    })}
+
                 </tbody>
             </table>
         )
     }
 }
 
+// allow redux to be accessed
 const mapStateToProps = (reduxState) => {
     return {
         reduxState

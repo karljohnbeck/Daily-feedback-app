@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 // redux 
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import logger from 'redux-logger'
 
 const feelingReducer = (state = 0, action) => {
@@ -17,6 +17,7 @@ const feelingReducer = (state = 0, action) => {
     }
     return state;
 }
+
 const understandingReducer = (state = 0, action) => {
     if (action.type === 'SET_UNDERSTANDING') {
         return action.payload
@@ -25,6 +26,7 @@ const understandingReducer = (state = 0, action) => {
     }
     return state;
 }
+
 const supportReducer = (state = 0, action) => {
     if (action.type === 'SET_SUPPORT') {
         return action.payload
@@ -33,6 +35,7 @@ const supportReducer = (state = 0, action) => {
     }
     return state;
 }
+
 const commentReducer = (state = '', action) => {
     if (action.type === 'SET_COMMENT') {
         return action.payload
@@ -41,6 +44,7 @@ const commentReducer = (state = '', action) => {
     }
     return state;
 }
+
 const feedbackDataReducer = (state = [], action) => {
     if (action.type === 'SET_FEEDBACK_DATA') {
         return action.payload
